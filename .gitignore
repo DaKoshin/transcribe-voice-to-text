@@ -36,7 +36,7 @@ ENV/
 # Project specific
 *.txt
 !requirements.txt
-config.json
+
 
 # OS specific
 .DS_Store
