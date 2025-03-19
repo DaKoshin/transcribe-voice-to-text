@@ -10,9 +10,9 @@ import whisper
 with open("config.json", "r", encoding="utf-8") as f:
     config = json.load(f)
 
-# Getting language and model name from configuration (default "uk" and "large-v3")
+# Getting language and model name from configuration (default "uk" and "medium")
 language = config.get("language", "uk")
-model_name = config.get("model", "large-v3")
+model_name = config.get("model", "medium")
 is_expandable_segments = config.get("expandable_segments", True)
 
 if is_expandable_segments:
