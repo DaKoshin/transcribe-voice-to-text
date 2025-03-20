@@ -1,5 +1,10 @@
 {
     "language": "uk",
     "model": "medium",
-    "expandable_segments": true
+    "expandable_segments": true,
+    "output_format": {
+        "type": "txt",
+        "include_timestamps": false,
+        "include_confidence": false
+    }
 }
