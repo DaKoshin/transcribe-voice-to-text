@@ -85,6 +85,11 @@ def main():
 
     # Get audio file path and load model
     audio_path = input("Enter the path to the audio file: ")
+
+    if not os.path.exists(audio_path):
+        print(f"Audio file not found: {audio_path}")
+        return
+
     model = whisper.load_model(model_name)
 
     # Start progress indicator
