@@ -20,14 +20,15 @@ A Python-based tool that uses OpenAI's Whisper model to transcribe audio files t
 ## Installation
 
 1. Clone this repository
-2. Create a virtual environment:
+2. Copy `config.example.json` to `config.json` and setup
+3. Create a virtual environment:
    ```bash
    python -m venv .venv
    source .venv/bin/activate  # On Linux/Mac
    # or
    .venv\Scripts\activate  # On Windows
    ```
-3. Install dependencies:
+4. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
