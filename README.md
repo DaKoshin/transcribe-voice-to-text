@@ -20,14 +20,15 @@ A Python-based tool that uses OpenAI's Whisper model to transcribe audio files t
 ## Installation
 
 1. Clone this repository
-2. Create a virtual environment:
+2. Copy `config.example.json` to `config.json` and setup
+3. Create a virtual environment:
    ```bash
    python -m venv .venv
    source .venv/bin/activate  # On Linux/Mac
    # or
    .venv\Scripts\activate  # On Windows
    ```
-3. Install dependencies:
+4. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
@@ -40,6 +41,7 @@ Edit `config.json` to customize the transcription settings:
 - `language`: Target language code (e.g., "uk" for Ukrainian, "en" for English)
 - `model`: Whisper model size ("tiny", "base", "small", "medium", "large-v3")
 - `expandable_segments`: Enable/disable expandable segments for better memory management
+- `unverified_ssl_context`: Enable/disable verify ssl certificate if you got `CERTIFICATE_VERIFY_FAILED` error
 
 ### Output Format Settings
 The `output_format` section allows you to customize how the transcription is saved:

@@ -3,6 +3,7 @@ import json
 import os
 import threading
 import time
+import ssl
 
 import whisper
 
@@ -69,17 +70,26 @@ def main():
     language = config.get("language", "uk")
     model_name = config.get("model", "medium")
     is_expandable_segments = config.get("expandable_segments", True)
+    is_unverified_ssl_context = config.get("unverified_ssl_context", True)
     output_format = config.get("output_format", {
         "type": "txt",
         "include_timestamps": False,
         "include_confidence": False
     })
 
+    if is_unverified_ssl_context:
+        ssl._create_default_https_context = ssl._create_unverified_context
+
     if is_expandable_segments:
         os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 
     # Get audio file path and load model
     audio_path = input("Enter the path to the audio file: ")
+
+    if not os.path.exists(audio_path):
+        print(f"Audio file not found: {audio_path}")
+        return
+
     model = whisper.load_model(model_name)
 
     # Start progress indicator
