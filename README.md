@@ -41,6 +41,7 @@ Edit `config.json` to customize the transcription settings:
 - `language`: Target language code (e.g., "uk" for Ukrainian, "en" for English)
 - `model`: Whisper model size ("tiny", "base", "small", "medium", "large-v3")
 - `expandable_segments`: Enable/disable expandable segments for better memory management
+- `unverified_ssl_context`: Enable/disable verify ssl certificate if you got `CERTIFICATE_VERIFY_FAILED` error
 
 ### Output Format Settings
 The `output_format` section allows you to customize how the transcription is saved:
