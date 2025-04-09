@@ -83,11 +83,11 @@ def main():
     if is_expandable_segments:
         os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 
-    # Get audio file path and load model
-    audio_path = input("Enter the path to the audio file: ")
+    # Get media file path and load model
+    media_path = input("Enter the path to the media file: ")
 
-    if not os.path.exists(audio_path):
-        print(f"Audio file not found: {audio_path}")
+    if not os.path.exists(media_path):
+        print(f"Media file not found: {media_path}")
         return
 
     model = whisper.load_model(model_name)
@@ -98,7 +98,7 @@ def main():
     spinner_thread.start()
 
     # Perform transcription
-    result = model.transcribe(audio_path, language=language)
+    result = model.transcribe(media_path, language=language)
     
     # Stop progress indicator
     stop_event.set()
@@ -109,7 +109,7 @@ def main():
     if output_ext not in ["txt", "json", "srt"]:
         output_ext = "txt"
 
-    output_filename = os.path.splitext(audio_path)[0] + f".{output_ext}"
+    output_filename = os.path.splitext(media_path)[0] + f".{output_ext}"
 
     # Format output content
     if output_ext == "txt":

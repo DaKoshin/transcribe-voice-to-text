@@ -1,6 +1,6 @@
 # Voice to Text Transcription Tool
 
-A Python-based tool that uses OpenAI's Whisper model to transcribe audio files to text. The tool supports multiple languages and provides a simple command-line interface.
+A Python-based tool that uses OpenAI's Whisper model to transcribe media files to text. The tool supports multiple languages and provides a simple command-line interface.
 
 ## Features
 
@@ -105,7 +105,7 @@ Example configurations:
    ```bash
    python main.py
    ```
-2. Enter the path to your audio file when prompted
+2. Enter the path to your media file when prompted
 3. Wait for the transcription to complete
 4. The transcribed text will be saved in a file with the appropriate extension (.txt, .json, or .srt)
 
