@@ -16,6 +16,7 @@ A Python-based tool that uses OpenAI's Whisper model to transcribe media files t
 - Python 3.x
 - OpenAI Whisper
 - CUDA-capable GPU (recommended for better performance)
+- ffmpeg
 
 ## Installation
 
